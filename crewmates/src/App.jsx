@@ -1,6 +1,6 @@
-import { createClient } from '@supabase/supabase-js'
 import { useState } from 'react'
 import './App.css'
+import { supabase } from './Client'
 
 function App() {
   const [count, setCount] = useState(0)
