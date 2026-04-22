@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { supabase } from './Client'
+import createPage from './createPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,7 +10,7 @@ function App() {
     <>
       <h1>Dragon Farm</h1>
       <h4>Create your dream dragon squad</h4>
-
+      <button onClick={createPage}>Create a Dragon</button>
       <div className="dragon-container">
         <h3>Your Dragon Squad</h3>
         <div className="dragon-list">
