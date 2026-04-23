@@ -4,7 +4,7 @@ const createPost = async (event, post) => {
     event.preventDefault()
 
     const { data, error } = await supabase
-        .from('Crewmates')
+        .from('dragon')
         .insert({dragon_name: post.dragon_name, dragon_type: post.dragon_type, dragon_diet: post.dragon_diet})
         .select()
 

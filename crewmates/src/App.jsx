@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import './App.css'
 import { supabase } from './Client'
 
 function App() {
-  const [count, setCount] = useState(0)
   
   return (
     <>
@@ -13,12 +12,9 @@ function App() {
       <Link to="/create">
         <button>Create a Dragon</button>
       </Link>
-      <div className="dragon-container">
-        <h3>Your Dragon Squad</h3>
-        <div className="dragon-list">
-          {/*Your dragon squad will appear here*/}
-        </div>
-      </div>
+      <Link to="/view">
+        <button>View Dragons</button>
+      </Link>
     </>
   )
 }

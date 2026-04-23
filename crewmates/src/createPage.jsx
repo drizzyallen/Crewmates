@@ -27,11 +27,25 @@ function createPage() {
             <label>Name</label>
             <input type="text" name="dragon_name" value={post.dragon_name} onChange={handleChange} />
             
-            <label>Color</label>
+            <label>Type</label>
             <input type="text" name="dragon_type" value={post.dragon_type} onChange={handleChange} />
 
             <label>Diet</label>
-            <input type="text" name="dragon_diet" value={post.dragon_diet} onChange={handleChange} />
+            <div className="radio-container">
+                {["Spicy foods", "Raw meat", "Vegan", "Sea food", "Sweets", "Breakfast 24/7", "Fruits", "Ice cubes"].map(diet => (
+                    <label key={diet} style={{ display: 'block', fontWeight: 'normal', margin: '4px 0' }}>
+                        <input 
+                            type="radio" 
+                            name="dragon_diet" 
+                            value={diet} 
+                            checked={post.dragon_diet === diet} 
+                            onChange={handleChange} 
+                            style={{ marginRight: '8px' }}
+                        />
+                        {diet}
+                    </label>
+                ))}
+            </div>
             
             <button type="submit">Create Dragon</button>
         </form>
